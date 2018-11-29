@@ -20,4 +20,5 @@ def sign_up():
 def hello_someone(name):
         return render_template("hello.html", name=name.title())
 
-app.run(debug=True)
+from os import environ
+app.run(host='0.0.0.0', debug=True, port=environ.get('PORT', '5000'))
